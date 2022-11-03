@@ -1,9 +1,23 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
+:root {
+	--black: #000000;
+	--black: #000000;
+	--grey-900: #121214;
+	--grey-700: #202024;
+	--grey-400: #7c7c8a;
+	--grey-100: #e1e1e6;
+	--grey-200: #c4c4cc;
+	--cyan-500: #81d8f7;
+	--cyan-300: #a9e7fc;
+}
+
+html, body, button {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+html,
+body {
+  background-color: var(--grey-900);
 }
 
 a {
@@ -12,6 +26,9 @@ a {
 }
 
 * {
+  padding: 0;
+  margin: 0;
+  outline: none;
   box-sizing: border-box;
 }
 

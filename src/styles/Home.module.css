@@ -1,0 +1,85 @@
+.container {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.main {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 46px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header p {
+  text-align: center;
+  margin: 8px 0 0 0;
+  color: var(--grey-200)
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.cardsContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.card {
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 300px;
+}
+
+.result {
+  margin-top: 24px;
+}
+
+.result h2 {
+  color: #fff;
+}
+
+.result p {
+  margin-top: 6px;
+  color: var(--grey-200);
+}
+
+
+@media screen and (max-width: 506px) {
+  .grid {
+    justify-content: center;
+  }
+
+  .cardsContainer + .cardsContainer {
+    margin-top: 24px;
+  }
+
+}
+

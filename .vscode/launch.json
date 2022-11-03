@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "${workspaceFolder}/node_modules/next/dist/bin/next",
+      "args": ["dev"],
+      "port": 9229,
+      "console": "integratedTerminal",
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "skipFiles": ["<node_internals>/**"],
+      "name": "Attach",
+      "port": 9229
+    }
+  ]
+}
