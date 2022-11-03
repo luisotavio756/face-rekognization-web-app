@@ -43,12 +43,13 @@ const Home: NextPage = () => {
 
   const resultText = useMemo(() => {
     const unmatchedFaces = comparisonResult?.UnmatchedFaces?.length;
+    const similarity = comparisonResult?.FaceMatches?.[0]?.Similarity || 0;
+    const parsedSimilarity = parseFloat(similarity.toFixed(2));
 
     if (unmatchedFaces) {
       return `Não foi possível reconhecer ${unmatchedFaces} faces nas imagens. Por favor, tente outra imagem.`
     }
-    const similarity = comparisonResult?.FaceMatches?.[0].Similarity || 0;
-    const parsedSimilarity = parseFloat(similarity.toFixed(2));
+
 
     if (parsedSimilarity > 70) {
       return `Os dois rostos parecem ser a mesma pessoa. A similaridade é de ${parsedSimilarity}%`;
