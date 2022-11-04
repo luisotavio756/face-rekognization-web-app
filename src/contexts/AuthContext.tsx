@@ -3,6 +3,7 @@ import Router from "next/router";
 
 import api from "../services/api";
 import { parseCookies, setCookie, destroyCookie } from "nookies";
+import { AxiosError } from "axios";
 
 interface AuthProviderProps {
   children: React.ReactNode;
@@ -63,7 +64,12 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
       Router.push('/');
     } catch (error) {
-      console.log(error);
+      if (error instanceof AxiosError) {
+        const notFoundResponse = error.response?.status === 404;
+        const message = notFoundResponse ? 'Usuário não encontrado' :  'Ocorreu um erro ao tentar fazer login';
+
+        alert(message);
+      }
     }
   }
 
