@@ -26,7 +26,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   const token = sign({}, jwtSecret, {
-    expiresIn: '10s',
+    expiresIn: '6h',
   });
 
   delete findUser.password;
