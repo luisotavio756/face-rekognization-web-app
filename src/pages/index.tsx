@@ -52,12 +52,12 @@ const Home: NextPage = () => {
   }
 
   const resultText = useMemo(() => {
-    const unmatchedFaces = comparisonResult?.UnmatchedFaces?.length;
+    const hasUnmatchedFaces = comparisonResult?.UnmatchedFaces?.length;
     const similarity = comparisonResult?.FaceMatches?.[0]?.Similarity || 0;
     const parsedSimilarity = parseFloat(similarity.toFixed(2));
 
-    if (unmatchedFaces) {
-      return `Não foi possível reconhecer ${unmatchedFaces} faces nas imagens. Por favor, tente outra imagem.`
+    if (hasUnmatchedFaces) {
+      return `Não foi possível assimilar as faces nas imagens. Talvez não seja a mesma pessoa ou não foi possível detectar na imagem fornecida. Por favor, tente outra.`
     }
 
 
