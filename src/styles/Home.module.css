@@ -5,6 +5,34 @@
   padding: 2rem 1rem;
 }
 
+.logoutContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 20px 36px;
+}
+
+.logoutContainer button {
+  background-color: transparent;
+  border: none;
+
+  color: var(--cyan-500);
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logoutContainer button:hover {
+  filter: brightness(90%);
+  text-decoration: underline;
+}
+
+.logoutContainer button svg {
+  margin-left: 4px;
+}
+
 .main {
   margin-top: 24px;
   display: flex;
@@ -80,6 +108,5 @@
   .cardsContainer + .cardsContainer {
     margin-top: 24px;
   }
-
 }
 

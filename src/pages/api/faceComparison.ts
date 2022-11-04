@@ -1,6 +1,7 @@
 import { NextApiResponse, NextApiRequest } from 'next'
 import nextConnect from 'next-connect';
 import upload from '../../config/upload';
+import authSession from '../../middlewares/authSession';
 import { FaceCompareService } from '../../services/faceComparison';
 
 interface File {
@@ -37,6 +38,8 @@ const apiRoute = nextConnect<NextApiRequest, NextApiResponse>({
   }
 });
 
+apiRoute.use(authSession);
+
 apiRoute.use(upload.multer.fields([
   {
     name: 'sourceImg'
@@ -47,14 +50,13 @@ apiRoute.use(upload.multer.fields([
 ]));
 
 // Process a POST request
-apiRoute.post(async (req: RequestWithFiles, res) => {
+apiRoute.post(async (req: RequestWithFiles, res, next) => {
   const { sourceImg, targetImg } = req.files;
   const faceCompareService = new FaceCompareService();
 
   const response = await faceCompareService.compareFaces(sourceImg[0].buffer, targetImg[0].buffer);
 
   return res.json(response);
-
 });
 
 export default apiRoute;
