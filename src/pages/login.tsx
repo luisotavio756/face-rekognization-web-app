@@ -45,12 +45,12 @@ const Login: NextPage = () => {
       <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
         <div className={styles.inputWrapper}>
           <label htmlFor="">Login</label>
-          <input placeholder="Digite seu login" ref={loginRef} type="text" required defaultValue={"fernando"} />
+          <input placeholder="Digite seu login" ref={loginRef} type="text" required />
         </div>
 
         <div className={styles.inputWrapper}>
           <label htmlFor="">Senha</label>
-          <input placeholder="*********" ref={passRef} type="password" required defaultValue={"root@!loc4$"} />
+          <input placeholder="*********" ref={passRef} type="password" required />
         </div>
 
         <Button type="submit">Entrar</Button>
